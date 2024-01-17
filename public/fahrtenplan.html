@@ -6,6 +6,13 @@
     <link href="/assets/css/Routen.css" rel="stylesheet"/>
     <link href="/assets/css/main.css" rel="stylesheet"/>
     <script src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="fahrtenplan.css"/>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+ <script defer src="main.js"></script>
 </head>
 
 <script crossorigin="anonymous"
@@ -37,5 +44,51 @@
         </div>
     </div>
 </div>
+<div class="mainbox">
+    <h1 class="read"> <i class="fa-brands fa-readme" style="font-size:25px;"></i>  Übersicht aller einzelnen Fahrten </h1>
+    <div class="atable">
+        <table class="rtable" id="fahrten-tabelle">
+        <tr>
+            <th>Fahrt-ID</th>
+            <th>Fahrgast Vorname</th>
+            <th>Fahrgast Nachname</th>
+             <th>Abholort</th>
+            <th>Zielort</th>
+             <th>Datum</th>
+        </tr>
+    </table>
+    </div>
+</div>
+</div>
+
+</div>
+<script>
+$(document).ready(function () {
+    console.log("ready!");
+    
+    $.get("fahrten", function (data) {
+        console.log(data);
+
+        for (const row of data) {
+           
+            console.log("Fahrer:", row["FahrerID"]);
+
+            const tableRow2 = `<tr>
+                <td>${row["FahrtID"]}</td>
+                <td>${row["Fahrgast_Vorname"]}</td>
+                <td>${row["Fahrgast_Nachname"]}</td>
+                <td>${row["Startpunkt"]}</td>
+                <td>${row["Zielpunkt"]}</td>
+                <td>${row["Datum"]}</td>
+            </tr>`;
+
+            $('#fahrten-tabelle').find('tbody').append(tableRow2);
+
+        }
+
+    });
+    
+});
+</script>
 </body>
 </html>
