@@ -137,10 +137,8 @@ html, body {
 }
 
 .hroute {
-    border: 2px solid white;
+    border: 2px solid black;
     margin-right: 30px;
-    background-color: #FFFFE0;
-
 }
 
 .hr {
@@ -156,7 +154,7 @@ html, body {
 
 .htable {
     border-collapse: collapse;
-    width: 60%;
+    width: 90%;
     text-align: center;
 
 }
