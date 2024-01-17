@@ -11,7 +11,7 @@
     text-decoration-line: none;
     border: white;
     width: 40%;
-    background-color: black;
+    background-color: gray;
     color: white;
     hight: 20px;
 }
@@ -24,7 +24,7 @@ html, body {
 .header {
     background-size: cover;
     font-size: 50px;
-    background-color: black;
+    background-color: gray;
     color: white;
     font-family: "Times New Roman", Times, serif;
     text-align: center;
@@ -73,15 +73,15 @@ html, body {
     display: inline-block;
     font-size: 40px;
     text-decoration-line: none;
-    color: black;
+    color: gray;
 }
 
 .navibar li a:hover {
-    color: gold;
+    color: darkgoldenrod;
 }
 
 .nav li a:hover {
-    backgroundcolor: black;
+    backgroundcolor: lightblue;
     color: green;
 }
 
@@ -97,7 +97,7 @@ html, body {
     padding-top: 15px;
     padding-bottom: 15px;
     border: 2px solid white;
-    background-color: black;
+    background-color: gray;
 
 }
 
