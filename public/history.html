@@ -1,42 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link href="/assets/css/history.css" rel="stylesheet"/>
+    <link href="/assets/css/history.css" rel="stylesheet" />
     <title>History-MotiMove</title>
-    <link href="/assets/css/Routen.css" rel="stylesheet"/>
-    <link href="/assets/css/main.css" rel="stylesheet"/>
+    <link href="/assets/css/Routen.css" rel="stylesheet" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
     <script src="/assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <script defer src="main.js"></script>
 </head>
 
-<script crossorigin="790004d9dc"
-        src="https://kit.fontawesome.com/790004d9dc.js"></script>
+<script crossorigin="790004d9dc" src="https://kit.fontawesome.com/790004d9dc.js"></script>
 
-<H1 class="header">MediMove - Fahrtenhistorie</H1>
+<H1 class="header">MediMove - Fahrerliste</H1>
 <ul class="nav">
     <li><a class="n1" href="/title" style="color:red;"><i class="fa-solid fa-hand-point-right" style="color:red;"></i>
-        Medimove</a></li>
+            Medimove</a></li>
     <li><a href="/messages"><i class="fa-solid fa-envelope" style="font-size:1em;"></i></a></li>
 </ul>
-
+</head>
 
 <body>
-<div class="bigbox">
-    <div class="leftbox">
+    <div class="bigbox">
+        <div class="leftbox">
 
-        <ul class="navibar">
-            <li><a href=""><i class="fa-solid fa-compass" style ="font-size:2em;"></i></a></li>
-            <li><a href="/title">StartSeite/Dashboard</a></li>
-            <li><a href="/allRouten" class="allrouten">Alle Routen  <i class="fa-solid fa-route"></i></a></li>
-            <li><a href="/plan" class="allf">Mein Fahrtenplan</a></li>
-            <li><a href="/history">Fahrtenhistorie</a></li>
-            <li><a href="/messages">Mitteilung <i class="fa-solid fa-bell"></i></a></li>
-        </ul>
-        <div>
-            <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
-                                                                 style="font-size:25px"></i></button>
+            <ul class="navibar">
+                <li><a href=""><i class="fa-solid fa-compass" style="font-size:2em;"></i></a></li>
+                <li><a href="/title">StartSeite/Dashboard</a></li>
+                <li><a href="/allRouten" class="allrouten">Alle Routen <i class="fa-solid fa-route"></i></a></li>
+                <li><a href="/plan" class="allf">Mein Fahrtenplan</a></li>
+                <li><a href="/history">Fahrtenhistorie</a></li>
+                <li><a href="/messages">Mitteilung <i class="fa-solid fa-bell"></i></a></li>
+            </ul>
+            <div>
+                <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
+                        style="font-size:25px"></i></button>
+            </div>
         </div>
     </div>
-</div>
+    <div class="mainbox">
+        <h1 class="read"> <i class="fa-brands fa-readme" style="font-size:25px;"></i> Liste aller Fahrer </h1>
+        <div class="atable">
+            <table class="rtable" id="fahrer-tabelle">
+                <tr>
+                    <th>Fahrer-ID</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+
+            $.get("fahrer", function (data) {
+                console.log(data);
+
+                for (const row of data) {
+
+                    console.log("Fahrer:", row["FahrerID"]);
+
+                    const tableRow2 = `<tr>
+                    <td>${row["FahrerID"]}</td>
+                    <td>${row["Vorname"]}</td>
+                    <td>${row["Nachname"]}</td>
+                </tr>`;
+
+                    $('#fahrer-tabelle').find('tbody').append(tableRow2);
+
+                }
+
+            });
+
+        });
+    </script>
 </body>
+
 </html>
