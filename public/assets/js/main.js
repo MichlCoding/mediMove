@@ -19,6 +19,5 @@ closeModal.addEventListener('click', ()=> {
 
 // Where is this needed? Comment what this is doing or where it is used! //TODO lin
 function goBackFunction(){
-
     window.history.back();
 }

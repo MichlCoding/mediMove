@@ -6,13 +6,12 @@
     <link href="/assets/css/Routen.css" rel="stylesheet"/>
     <link href="/assets/css/main.css" rel="stylesheet"/>
     <script src="/assets/js/main.js"></script>
-    <link rel="stylesheet" href="main.css"/>
-    <link rel="stylesheet" href="fahrtenplan.css"/>
-    
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
- <script defer src="main.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script defer src="/assets/js/main.js"></script>
 </head>
 
 <script crossorigin="anonymous"
@@ -31,10 +30,10 @@
     <div class="leftbox">
 
         <ul class="navibar">
-            <li><a href=""><i class="fa-solid fa-compass" style ="font-size:2em;"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-compass" style="font-size:2em;"></i></a></li>
             <li><a href="/title">StartSeite/Dashboard</a></li>
-            <li><a href="/allRouten" class="allrouten">Alle Routen  <i class="fa-solid fa-route"></i></a></li>
-            <li><a href="/plan" class="allf">Mein Fahrtenplan</a></li>
+            <li><a class="allrouten" href="/allRouten">Alle Routen <i class="fa-solid fa-route"></i></a></li>
+            <li><a class="allf" href="/plan">Mein Fahrtenplan</a></li>
             <li><a href="/history">Fahrtenhistorie</a></li>
             <li><a href="/messages">Mitteilung <i class="fa-solid fa-bell"></i></a></li>
         </ul>
@@ -43,52 +42,54 @@
                                                                  style="font-size:25px"></i></button>
         </div>
     </div>
-</div>
-<div class="mainbox">
-    <h1 class="read"> <i class="fa-brands fa-readme" style="font-size:25px;"></i>  Übersicht aller einzelnen Fahrten </h1>
-    <div class="atable">
-        <table class="rtable" id="fahrten-tabelle">
-        <tr>
-            <th>Fahrt-ID</th>
-            <th>Fahrgast Vorname</th>
-            <th>Fahrgast Nachname</th>
-             <th>Abholort</th>
-            <th>Zielort</th>
-             <th>Datum</th>
-        </tr>
-    </table>
+
+    <div class="mainbox">
+        <h1 class="read"><i class="fa-brands fa-readme" style="font-size:25px;"></i> Übersicht aller einzelnen Fahrten
+        </h1>
+        <div class="atable">
+            <table class="rtable" id="fahrten-tabelle" style="width: 100%; font-size: 16px">
+                <tr>
+                    <th style="width: 5%">Fahrt-ID</th>
+                    <th style="width: 10%">Fahrgast Vorname</th>
+                    <th style="width: 10%">Fahrgast Nachname</th>
+                    <th style="width: 20%">Abholort</th>
+                    <th style="width: 20%">Zielort</th>
+                    <th style="width: 20%">Datum</th>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
-</div>
-
-</div>
 <script>
-$(document).ready(function () {
-    console.log("ready!");
-    
-    $.get("fahrten", function (data) {
-        console.log(data);
+    $(document).ready(function () {
+        console.log("ready!");
 
-        for (const row of data) {
-           
-            console.log("Fahrer:", row["FahrerID"]);
+        $.get("fahrten", function (data) {
+            console.log(data);
 
-            const tableRow2 = `<tr>
+            for (const row of data) {
+
+                console.log("Fahrer:", row["FahrerID"]);
+                // eine funktion die das Datum zu einer Uhrzeit mit Datum macht
+                const date = new Date(row["Datum"]);
+                const dateString = date.toLocaleDateString();
+                const timeString = date.toLocaleTimeString();
+                const dateTimeString = dateString + " -- " + timeString;
+
+
+                const tableRow2 = `<tr>
                 <td>${row["FahrtID"]}</td>
                 <td>${row["Fahrgast_Vorname"]}</td>
                 <td>${row["Fahrgast_Nachname"]}</td>
                 <td>${row["Startpunkt"]}</td>
                 <td>${row["Zielpunkt"]}</td>
-                <td>${row["Datum"]}</td>
+                <td>${dateTimeString}</td>
             </tr>`;
 
-            $('#fahrten-tabelle').find('tbody').append(tableRow2);
-
-        }
-
+                $('#fahrten-tabelle').find('tbody').append(tableRow2);
+            }
+        });
     });
-    
-});
 </script>
 </body>
 </html>
