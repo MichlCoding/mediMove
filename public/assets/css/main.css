@@ -6,14 +6,12 @@
 
 .goback {
     margin-top: 50px;
-    margin-left: 40px;
     font-size: 30px;
     text-decoration-line: none;
     border: white;
-    width: 40%;
-    background-color: gray;
+    width: 10%;
+    background-color: #09092c;
     color: white;
-    hight: 20px;
 }
 
 html, body {
@@ -24,7 +22,7 @@ html, body {
 .header {
     background-size: cover;
     font-size: 50px;
-    background-color: gray;
+    background-color: #09092c;
     color: white;
     font-family: "Times New Roman", Times, serif;
     text-align: center;
@@ -73,7 +71,7 @@ html, body {
     display: inline-block;
     font-size: 40px;
     text-decoration-line: none;
-    color: gray;
+    color: #09092c;
 }
 
 .navibar li a:hover {
@@ -81,7 +79,6 @@ html, body {
 }
 
 .nav li a:hover {
-    backgroundcolor: lightblue;
     color: green;
 }
 
@@ -97,7 +94,7 @@ html, body {
     padding-top: 15px;
     padding-bottom: 15px;
     border: 2px solid white;
-    background-color: gray;
+    background-color: #09092c;
 
 }
 
@@ -166,7 +163,7 @@ html, body {
 }
 
 .htable td {
-    background-color: #E0FFFF;
+
 }
 
 .datum {
@@ -196,7 +193,6 @@ html, body {
     margin-right: 30px;
     font-size: 20px;
     padding-left: 20px;
-    background-color: #FFFFE0;
 }
 
 .news {
