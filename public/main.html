@@ -11,70 +11,19 @@
     <script crossorigin="anonymous"
             src="https://kit.fontawesome.com/790004d9dc.js"></script>
     <script src="/assets/js/main.js"></script>
-    <style>
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-
-        .sidenav {
-            overflow-x: hidden;
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-    </style>
 </head>
 <H1 class="header"> MediMove - Startseite</H1>
 <body>
 <div class="bigbox">
     <div class="leftbox">
-
-        <div id="mySidenav" class="sidenav">
-            <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-                   style="color:white;text-decoration-line: none;float:center">&#9776</a></li>
-            <ul class="navibar">
-                <li><a href=""><img alt="logo" src="/assets/images/mediMove.jpg" style="height:150px"></a></li>
-                <li><a href="/title">StartSeite</a></li>
-                <li><a class="allrouten" href="/allRouten">Alle Routen <i class="fa-solid fa-route"></i></a></li>
-                <li><a class="allf" href="/plan">Alle Fahrten</a></li>
-                <li><a href="/history">Fahrerliste</a></li>
-                <li><a href="/messages">Mitteilung <i class="fa-solid fa-bell"></i></a></li>
-            </ul>
-        </div>
-        <ul>
-            <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
-            <li><a href=""><img alt="logo" src="/assets/images/mediMove.jpg" style="height: 150px"></a></li>
+        <ul class="navibar">
+            <li><a href="/"><img alt="logo" src="/assets/images/mediMove.jpg" style="height: 150px"></a></li>
+            <li><a href="/title">Startseite</a></li>
+            <li><a class="allrouten" href="/allRouten">Alle Routen</a></li>
+            <li><a class="allf" href="/plan">Alle Fahrten</a></li>
+            <li><a href="/history">Fahrerliste</a></li>
+            <li><a href="/notice">Mitteilung</a></li>
         </ul>
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
     </div>
     <div class="mainbox">
         <a href="/messages"><i class="fa-solid fa-envelope"
@@ -85,7 +34,7 @@
         </div>
         <h1 class="hallo">Willkommen bei MediMove!</h1>
         <div class="hroute">
-            <h2 class="hr">Heutige Routen <i class="fa-solid fa-route"></i></h2>
+            <h2 class="nr">Heutige Routen <i class="fa-solid fa-route"></i></h2>
             <div class="table">
                 <table class="htable">
 
@@ -115,7 +64,7 @@
             </div>
         </div>
         <div class="nroute">
-            <h1 class="nr"> Nächste Route <i class="fa-solid fa-route"></i></h1>
+            <h1 class="hr"> Nächste Route <i class="fa-solid fa-route"></i></h1>
             <iframe allowfullscreen=""
                     class="map" height="80%" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
@@ -124,9 +73,19 @@
                     width="90%"></iframe>
         </div>
         <div class="meldung">
-            <h3>Wichtige Meldung <i class="fa-solid fa-circle-exclamation"></i></h3>
+            <h3>Wichtige Meldungen <i class="fa-solid fa-circle-exclamation"></i></h3>
             <div class="news">
-                <h4> Baustelle auf A8 </h4>
+                <ul>
+                    <li><h1 style="text-align:left; font-size: 14px;">B10 Stuttgart - defekter LKW → Ulm zwischen
+                        Deizisau und B313, Plochinger Dreieck Gefahr durch defekten LKW auf dem rechten Fahrstreifen18.
+                    </h1></li>
+                    <li><h2 style=" text-align:left; font-size:14px;">A81 Singen - defektes Fahrzeug → Stuttgart zwischen
+                        Böblingen/Sindelfingen und
+                        Böblingen-Ost Gefahr durch defektes Fahrzeug auf dem rechten Fahrstreifen
+                        und dem Standstreifen</h2>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>

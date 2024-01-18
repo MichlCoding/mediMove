@@ -140,9 +140,8 @@ html, body {
 }
 
 .hr {
-    margin-left: 10px;
-    padding-left: 30px;
-
+    padding-left: 20px;
+    font-size: 25px;
 }
 
 .table {

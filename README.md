@@ -62,8 +62,12 @@ To set up the database, a MySQL server must first be installed.
 The access data must be adapted in the file `server.js` in line 22.
 The database runs on port 3306.
 
+Make sure that the database name and the username in the project match those of the created database.
 
 ### Create Tables
+
+To generate these tables, the database `medimove` must be created and used.
+The code below can then be copied in its entirety and executed.
 
 ```mysql
 CREATE TABLE Fahrgast (
