@@ -8,7 +8,7 @@
     <script crossorigin="anonymous"
             src="https://kit.fontawesome.com/790004d9dc.js"></script>
 </head>
-<H1 class="header">MediMove - Mitteilung</H1>
+<H1 class="header">MediMove - Mitteilungen</H1>
 <body>
 <div class="bigbox">
     <div class="leftbox">
@@ -19,15 +19,28 @@
             <li><a class="allrouten" href="/allRouten">Alle Routen</a></li>
             <li><a class="allf" href="/plan">Alle Fahrten</a></li>
             <li><a href="/history">Fahrerliste</a></li>
-            <li><a href="/messages">Mitteilung</a></li>
+            <li><a href="/notice">Mitteilung</a></li>
         </ul>
 
     </div>
-    <div>
-        <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
-                                                             style="font-size:30px; "></i></button>
+    <div class="mainbox">
+        <a href="/messages"><i class="fa-solid fa-envelope"
+                               style="font-size:40px;color:#09092c;float:right"></i></a>
+        <div>
+            <div>
+                <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
+                                                                     style="font-size:30px"></i></button>
+            </div>
+        </div>
+        <h1 class="read">Heutige Mitteilungen <i class="fa-brands fa-readme" style="font-size:25px;"></i></h1>
+        <ul>
+            <li><h2 style="font-size:20px;">Melanie Klein Route 4 hat storniert.</h2></li>
+            <li><h2 style="font-size:20px;">Lisa Schulz Route 3 hat die Abholadresse geändert.</h2></li>
+            <li><h2 style="font-size:20px;">Max Schmidt Route 4 ist gestorben und muss nicht abgeholt
+                werden.</h2></li>
+            <li><h2 style="font-size:20px;">Paul Schweizer hat eine neue Telefonnummer.</h2></li>
+        </ul>
     </div>
-    <h1 style="margin-left:40px; text-align:center">Heute haben Sie keine Mitteilung.</h1>
 </div>
 </body>
 </html>

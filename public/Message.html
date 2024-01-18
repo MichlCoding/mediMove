@@ -8,7 +8,7 @@
     <script crossorigin="anonymous"
             src="https://kit.fontawesome.com/790004d9dc.js"></script>
 </head>
-<H1 class="header">MediMove - Mittelungen</H1>
+<H1 class="header">MediMove - Nachrichten</H1>
 <body>
 <div class="bigbox">
     <div class="leftbox">
@@ -18,18 +18,21 @@
             <li><a class="allrouten" href="/allRouten">Alle Routen</a></li>
             <li><a class="allf" href="/plan">Alle Fahrten</a></li>
             <li><a href="/history">Fahrerliste</a></li>
-            <li><a href="/messages">Mitteilung</a></li>
+            <li><a href="/notice">Mitteilung</a></li>
         </ul>
 
     </div>
     <div class="mainbox">
+        <a href="/messages"><i class="fa-solid fa-envelope"
+                               style="font-size:40px;color:#09092c;float:right"></i></a>
         <div>
-            <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
-                                                                 style="font-size:30px"></i></button>
+            <div>
+                <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
+                                                                     style="font-size:30px"></i></button>
+            </div>
+            <h1 class="read">Persönliche Nachrichten <i class="fa-solid fa-envelope" style="font-size:25px;"></i></h1>
+            <h1 style="font-size:20px; padding:30px">Sie haben keine Nachrichten.</h1>
         </div>
-
-        <h1 class="read"><i class="fa-brands fa-readme" style="font-size:25px;"></i> Mitteilungen</h1>
-        <h2 style="font-size:20px; padding:30px">Melanie Klein Route 4 hat storniert.</h2>
     </div>
 </div>
 </body>

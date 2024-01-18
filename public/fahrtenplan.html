@@ -25,50 +25,53 @@
             <li><a class="allrouten" href="/allRouten">Alle Routen</a></li>
             <li><a class="allf" href="/plan">Alle Fahrten</a></li>
             <li><a href="/history">Fahrerliste</a></li>
-            <li><a href="/messages">Mitteilung</a></li>
+            <li><a href="/notice">Mitteilung</a></li>
         </ul>
 
     </div>
 
     <div class="mainbox">
+        <a href="/messages"><i class="fa-solid fa-envelope"
+                               style="font-size:40px;color:#09092c;float:right"></i></a>
         <div>
-            <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
-                                                                 style="font-size:25px"></i></button>
-        </div>
-        <h1 class="read"><i class="fa-brands fa-readme" style="font-size:25px;"></i> Übersicht aller einzelnen Fahrten
-        </h1>
-        <div class="atable">
-            <table class="rtable" id="fahrten-tabelle" style="width: 100%; font-size: 16px">
-                <tr>
-                    <th style="width: 5%">Fahrt-ID</th>
-                    <th style="width: 10%">Fahrgast Vorname</th>
-                    <th style="width: 10%">Fahrgast Nachname</th>
-                    <th style="width: 20%">Abholort</th>
-                    <th style="width: 20%">Zielort</th>
-                    <th style="width: 20%">Datum</th>
-                </tr>
-            </table>
+            <div>
+                <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
+                                                                     style="font-size:25px"></i></button>
+            </div>
+            <h1 class="read">Übersicht aller einzelnen Fahrten<i class="fa-brands fa-readme"
+                                                                 style="font-size:25px;"></i></h1>
+            <div class="atable">
+                <table class="rtable" id="fahrten-tabelle" style="width: 100%; font-size: 16px">
+                    <tr>
+                        <th style="width: 5%">Fahrt-ID</th>
+                        <th style="width: 10%">Fahrgast Vorname</th>
+                        <th style="width: 10%">Fahrgast Nachname</th>
+                        <th style="width: 20%">Abholort</th>
+                        <th style="width: 20%">Zielort</th>
+                        <th style="width: 20%">Datum</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-</div>
-<script>
-    $(document).ready(function () {
-        console.log("ready!");
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
 
-        $.get("fahrten", function (data) {
-            console.log(data);
+            $.get("fahrten", function (data) {
+                console.log(data);
 
-            for (const row of data) {
+                for (const row of data) {
 
-                console.log("Fahrer:", row["FahrerID"]);
-                // eine funktion die das Datum zu einer Uhrzeit mit Datum macht
-                const date = new Date(row["Datum"]);
-                const dateString = date.toLocaleDateString();
-                const timeString = date.toLocaleTimeString();
-                const dateTimeString = dateString + " -- " + timeString;
+                    console.log("Fahrer:", row["FahrerID"]);
+                    // eine funktion die das Datum zu einer Uhrzeit mit Datum macht
+                    const date = new Date(row["Datum"]);
+                    const dateString = date.toLocaleDateString();
+                    const timeString = date.toLocaleTimeString();
+                    const dateTimeString = dateString + " -- " + timeString;
 
 
-                const tableRow2 = `<tr>
+                    const tableRow2 = `<tr>
                 <td>${row["FahrtID"]}</td>
                 <td>${row["Fahrgast_Vorname"]}</td>
                 <td>${row["Fahrgast_Nachname"]}</td>
@@ -77,10 +80,11 @@
                 <td>${dateTimeString}</td>
             </tr>`;
 
-                $('#fahrten-tabelle').find('tbody').append(tableRow2);
-            }
+                    $('#fahrten-tabelle').find('tbody').append(tableRow2);
+                }
+            });
         });
-    });
-</script>
+    </script>
+</div>
 </body>
 </html>
