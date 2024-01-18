@@ -22,7 +22,7 @@ const logger = winston.createLogger({
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Fq2pj8Y+7' ,
+    password: 'root' ,
     database: 'medimove',
 })
 
