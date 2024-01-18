@@ -15,14 +15,44 @@
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/790004d9dc.js"></script>
 
     <script defer src="/assets/js/main.js"></script>
+    <style>
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+          
+          @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+          }
+          .sidenav {
+            overflow-x: hidden;
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+          }
+
+    </style>
 </head>
-<H1 class="header">MediMove - Fahrerliste</H1>
+<H1 class="header"> MediMove - Fahrerliste</H1>
 <body>
 <div class="bigbox">
     <div class="leftbox">
-
+        
+        <div id="mySidenav" class="sidenav">
+           <li> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" 
+            style="color:white;text-decoration-line: none;float:center">&#9776</a>
         <ul class="navibar">
-            <li><a href=""><img alt="logo" src="/assets/images/mediMove.jpg" style="height: 150px"></a></li>
+            <li><a href=""><img alt="logo" src="/assets/images/mediMove.jpg" style="height:150px"></a></li>
             <li><a href="/title">StartSeite</a></li>
             <li><a class="allrouten" href="/allRouten">Alle Routen <i class="fa-solid fa-route"></i></a></li>
             <li><a class="allf" href="/plan">Alle Fahrten</a></li>
@@ -30,8 +60,24 @@
             <li><a href="/Mitteilung.html">Mitteilung <i class="fa-solid fa-bell"></i></a></li>
         </ul>
     </div>
+    <ul>
+   <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()" >&#9776; </span></li>
+       <li> <a href=""><img alt="logo" src="/assets/images/mediMove.jpg" style="height: 150px"></a></li>
+        </ul>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+    </div>
 
     <div class="mainbox">
+        <a href="/messages"><i class="fa-solid fa-envelope"
+            style="font-size:40px;color:#09092c;float:right"></i></a>
         <div>
             <button class="goback" onclick="goBackFunction()"><i class="fa-solid fa-arrow-left-long"
                                                                  style="font-size:30px"></i></button>
