@@ -117,6 +117,7 @@ html, body {
     float: left;
     width: 80%;
     padding-left: 120px;
+   
 }
 
 .bigbox::after {
@@ -163,8 +164,7 @@ html, body {
     border: 1px solid black;
 }
 
-.htable td {
-}
+
 
 .datum {
     height: 40px;
@@ -199,6 +199,9 @@ html, body {
     font-size: 20px;
 
 }
+
+
+
 
 
 

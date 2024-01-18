@@ -1,5 +1,5 @@
 const winston = require('winston');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const express = require("express");
 const app = express();
 
@@ -22,7 +22,7 @@ const logger = winston.createLogger({
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root' ,
+    password: 'Fq2pj8Y+7' ,
     database: 'medimove',
 })
 
